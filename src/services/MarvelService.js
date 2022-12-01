@@ -3,10 +3,12 @@ import {useHttp} from '../hooks/http.hook';
 const useMarvelService = () => {
     const {loading, request, error, clearError} = useHttp();
 
-    const _apiBase = 'env.api';
+    const _apiBase = process.env.REACT_APP_API_BASE;
  
-    const _apiKey = 'env.key';
+    const _apiKey = process.env.REACT_APP_API_KEY;
     const _baseOffset = 210;
+
+    
 
     const getAllCharacters = async (offset = _baseOffset) => {
         const res = await request(`${_apiBase}characters?limit=9&offset=${offset}&${_apiKey}`);

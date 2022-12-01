@@ -4,7 +4,7 @@ import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import { Link } from 'react-router-dom';
 import './comicsList.scss';
-import { useParams } from 'react-router-dom';
+
 
 const ComicsList = () => {
 

@@ -1,32 +1,24 @@
-import { Route, Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-import {MainPage, ComicsPage} from '../pages';
+import { MainPage, ComicsPage, ComicsSingle, NotFound } from '../pages';
 import AppHeader from "../appHeader/AppHeader";
 
 const App = () => {
-    
+
     return (
-        
-            <div className="app">
-                <AppHeader/>
-                <main>
-                    <Routes> 
-                    
-                        <Route exact path="/"
-                        element={<MainPage/>}
-                        >
-                            
-                        </Route>
-                        <Route  exact path="/comics"
-                        element={<ComicsPage/>}
-                        >
-                            
-                        </Route>
-                  
+
+        <div className="app">
+            <AppHeader />
+            <main>
+                <Routes>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/comics" element={<ComicsPage />} /> 
+                    <Route path="/comics/:id"  element={<ComicsSingle/>}  /> 
+                    <Route path="*"  element={<NotFound/>}  /> 
                 </Routes>
-                </main>
-            </div>
-       
+            </main>
+        </div>
+
     )
 }
 
